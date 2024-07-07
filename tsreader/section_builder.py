@@ -126,6 +126,7 @@ STATE_BUILDING = 1
 class SectionBuilder(BufferReader):
     def __init__(self, buffer, section_class=Section):
         super(SectionBuilder, self).__init__(buffer)
+        self.si_table = SiTable()
         self.current_sct = None
         self.sct_cls = section_class
         self.long_table = None
