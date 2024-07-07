@@ -1,6 +1,6 @@
 from mpeg2psi.section import Section
-from service import Service
-import descriptors
+from dvbsi.service import Service
+import dvbsi.descriptors
 
 RUNNING_STATUS_UNDEFINED = 0
 RUNNING_STATUS_RUNNING = 1
@@ -246,7 +246,7 @@ class Sdt(Section):
         return res
     
 if __name__ == '__main__':
-    print 'Testing Sdt class'
+    print ('Testing Sdt class')
     import unittest
     import _known_tables
     sample_sdt = _known_tables.get_sample_sdt_data()[0]
@@ -273,7 +273,7 @@ if __name__ == '__main__':
                 data = self.known_sections[function]
                 sdt = Sdt(data)
                 function(self, sdt)
-                print sdt
+                print (sdt)
 
     unittest.main()
 

@@ -204,7 +204,7 @@ class ServiceList(object):
 ---------------------------------------------------------------------------------------------------------------------------
 '''
 if __name__ == '__main__':
-    print 'Testing ServiceList class'
+    print ('Testing ServiceList class')
     import unittest
     import _known_tables
     
@@ -216,34 +216,34 @@ if __name__ == '__main__':
     class KnownSections(unittest.TestCase):
         def testKnownSections(self):
             svl = ServiceList()
-            print svl
+            print (svl)
             svl.update(nit=sample_nit_0)
-            print svl.get_service_count()
+            print (svl.get_service_count())
             self.assertEqual(svl.get_service_count(), 259, 'incorrect service count')
             svl.update(bat=sample_bat)
-            print svl.get_service_count()
+            print (svl.get_service_count())
             self.assertEqual(svl.get_service_count(), 259, 'incorrect service count')
             svl.update(nit=sample_nit_1)
-            print svl.get_service_count()
+            print (svl.get_service_count())
             self.assertEqual(svl.get_service_count(), 282, 'incorrect service count')
             svl.update(sdt=sample_sdt)
-            print svl.get_service_count()
+            print (svl.get_service_count())
             self.assertEqual(svl.get_service_count(), 282, 'incorrect service count')
-            print svl
+            print (svl)
             service = svl.get_service((0x1800, 0x10, 0x67b))
             self.assertEqual(len(service), 1, 'incorrect number of services found')
-            print service[0]
+            print (service[0])
             service = service[0]
             self.assertEqual(service.get_triplet(), (0x1800, 0x10, 0x67b), 'incorrect service found')
             self.assertEqual(service.name, 'PVOD', 'incorrect service name')
             
             service = svl.get_service(0x67b)
             self.assertEqual(len(service), 1, 'incorrect number of services found')
-            print service[0]
+            print (service[0])
             service = service[0]
             self.assertEqual(service.get_triplet(), (0x1800, 0x10, 0x67b), 'incorrect service found')
             self.assertEqual(service.name, 'PVOD', 'incorrect service name')
-            print svl.get_doubles()
+            print (svl.get_doubles())
             
             
     unittest.main()        

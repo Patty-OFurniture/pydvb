@@ -18,7 +18,7 @@ class SiTable (object):
         pass
     
     def add_section(self, section):
-        print section
+        print (section)
         if section.table_id != self.tid: return
         tide = section.table_id_extension
         if self.tide != None:
@@ -60,7 +60,7 @@ class SiTable (object):
 ---------------------------------------------------------------------------------------------------------------------------
 '''
 if __name__ == '__main__':
-    print 'Testing SI TABLE class'
+    print ('Testing SI TABLE class')
     #TODO - not a full unit test - need to do partial data addition
     import unittest
     import _known_tables
@@ -78,6 +78,6 @@ if __name__ == '__main__':
             self.assertEqual(nit.cver, 1)
             nit.add_section(nit_1)
             self.assertEqual(nit.complete, True)
-            print nit                            
+            print (nit)
                 
     unittest.main()

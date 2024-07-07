@@ -4,7 +4,7 @@
     Network Information Table.
 """
 
-from bat_nit_base import BatNitBase
+from dvbsi.bat_nit_base import BatNitBase
 
 class Nit(BatNitBase):
     """Network Information Table class
@@ -56,7 +56,7 @@ class Nit(BatNitBase):
 ---------------------------------------------------------------------------------------------------------------------------
 '''
 if __name__ == '__main__':
-    print 'Testing Nit class'
+    print ('Testing Nit class')
     import unittest
     import _known_tables
     
@@ -109,9 +109,9 @@ if __name__ == '__main__':
                 function(self, nit)
                 svl = service_list.ServiceList()
                 svl.update(nit=nit)
-                print nit
-                print svl
-            print svl
+                print (nit)
+                print (svl)
+            print (svl)
             
     unittest.main()
 

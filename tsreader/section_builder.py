@@ -1,3 +1,6 @@
+import sys
+sys.path.append('../')
+
 from mpeg2psi.section import Section, section_syntax_flag, get_version_number, get_section_number, get_table_id_extension
 from mpeg2psi.section import get_table_id
 from si_table import SiTable
@@ -83,9 +86,9 @@ class SectionBuilder1(BufferReader):
             section_data = data[offset:]
 
             if self.current_sct:
-                if offset > 1: print "????????????????????????????"
+                if offset > 1: print ("????????????????????????????")
                 if (not self.current_sct.complete) and (offset > 1):
-                    print "Found it"
+                    print ("Found it")
                     self.current_sct.add_data(data[1:offset])
                     if self.current_sct.complete:
                         if self.long_table:
@@ -146,7 +149,7 @@ class SectionBuilder(BufferReader):
         if psi:
             offset = data[0] + 1
             section_data = data[offset:]
-            #print "[%d]got section version[%d], number[%d]"%(self.sct_cls.TABLE_ID, get_version_number(section_data), get_section_number(section_data))
+            #print ("[%d]got section version[%d], number[%d]"%(self.sct_cls.TABLE_ID, get_version_number(section_data), get_section_number(section_data)))
             if self.long_table == None:
                 if section_syntax_flag(section_data):
                     self.long_table = True
@@ -160,7 +163,7 @@ class SectionBuilder(BufferReader):
     def building(self, data, psi):
         #print "building"
         if psi:
-            print "\n\nPROBLEM, got psi while still building a section!!!!!\n\n"
+            print ("\n\nPROBLEM, got psi while still building a section!!!!!\n\n")
             offset = data[0] + 1
             if offset > 1: #grab the data before the new section
                 self.building(data[1:offset], False)
@@ -174,8 +177,8 @@ class SectionBuilder(BufferReader):
             if self.current_sct.complete:
                 self.save_current_section()
                 if added < len(data):
-                    print "residual data[%d]"%(len(data))
-                    print "added[%d]"%(added)
+                    print ("residual data[%d]"%(len(data)))
+                    print ("added[%d]"%(added))
                     if data[added] != 0xff:
                         self.process_new_section(data[added:])
                     else:
@@ -213,7 +216,7 @@ class SectionBuilder(BufferReader):
                 #print "waiting for psi"
                 self.state = STATE_WAITING_FOR_PSI
         else:
-            print "building"
+            print ("building")
             self.state = STATE_BUILDING
 
 

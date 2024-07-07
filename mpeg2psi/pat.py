@@ -4,7 +4,7 @@
     MPEG2-TS Program Association Table section
 """
 
-from section import Section
+from mpeg2psi.section import Section
 
 
 def get_program_map(data=None):
@@ -81,7 +81,7 @@ class Pat(Section):
 ---------------------------------------------------------------------------------------------------------------------------
 '''
 if __name__ == '__main__':
-    print 'Testing Pat class'
+    print ('Testing Pat class')
     import unittest
     import _known_tables
     pat_data = _known_tables.get_sample_pat_data()[0]
@@ -112,6 +112,6 @@ if __name__ == '__main__':
                 data = self.known_sections[function]
                 pat = Pat(data)
                 function(self, pat)
-                print pat
+                print (pat)
 
     unittest.main()

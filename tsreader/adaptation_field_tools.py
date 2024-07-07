@@ -82,4 +82,4 @@ def get_splice_countdown(packet):
     return int(packet[18]) #can be negative
 
 if __name__ == '__main__':
-    print 'Testing adaptation_field_tools'
+    print ('Testing adaptation_field_tools')
