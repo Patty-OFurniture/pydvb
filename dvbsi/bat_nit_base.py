@@ -6,9 +6,9 @@
 """
 
 from mpeg2psi.section import Section
-from service import Service
-import descriptors
-       
+from dvbsi.service import Service
+import dvbsi.descriptors
+
 class TsItem(object):
     """Transport Stream Item class
     
@@ -325,7 +325,7 @@ class BatNitBase(Section):
 ---------------------------------------------------------------------------------------------------------------------------
 '''
 if __name__ == '__main__':
-    print 'Testing BatNitBase class'
+    print ('Testing BatNitBase class')
     import unittest
     import _known_tables
     
@@ -398,7 +398,7 @@ if __name__ == '__main__':
                 #print batnit
                 #print batnit.get_channel_number(0x235, 5)
                 #print batnit.get_channel_number(0x235, None)
-                print batnit.get_service_list(5)
+                print (batnit.get_service_list(5))
                 function(self, batnit)
 
     unittest.main()

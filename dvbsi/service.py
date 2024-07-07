@@ -3,7 +3,7 @@
     Provides a Service class to represent and hold information about a single DVB Service.
 """
 
-from descriptors import SERVICE_TYPE_STRINGS
+from dvbsi.descriptors import SERVICE_TYPE_STRINGS
 
 class Service(object):
     """Service class
@@ -114,6 +114,6 @@ class Service(object):
 if __name__ == '__main__':
     svc = Service(nid=10, tsid=101, svid=10101, chan=5, name='test', type=1)
     svc2 = Service(nid=11, svid=11111, chan=6, name='test1', type=2)
-    print svc
+    print (svc)
     svc.update(svc2)
-    print svc
+    print (svc)

@@ -4,8 +4,8 @@
     MPEG2-TS Conditional Access Table section
 """
 
-from section import Section #base class
-import descriptors #for descriptors carried in the table
+from mpeg2psi.section import Section #base class
+import dvbsi.descriptors #for descriptors carried in the table
 
 class Cat(Section):
     '''Conditional Access Table class
@@ -87,7 +87,7 @@ class Cat(Section):
 ---------------------------------------------------------------------------------------------------------------------------
 '''
 if __name__ == '__main__':
-    print 'Testing Cat class'
+    print ('Testing Cat class')
     #TODO - not a full unit test - need to do partial data addition
     import unittest
     import _known_tables

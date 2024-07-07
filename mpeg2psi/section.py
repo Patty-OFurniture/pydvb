@@ -13,7 +13,7 @@ if _DEV:
         filename = 'dev_data/section_tid_%d_ver_%d_scn_%d.sect'%(section.table_id,
                                                             section.version,
                                                             section.section_number)
-        print 'SAVING section to file %s'%(filename)
+        print ('SAVING section to file %s'%(filename))
         f = open(filename, 'wb')
         for byte in section.data_cache:
             f.write(struct.pack('B', byte))
@@ -303,7 +303,7 @@ class Section(object):
 ---------------------------------------------------------------------------------------------------------------------------
 '''
 if __name__ == '__main__':
-    print 'Testing Section class'
+    print ('Testing Section class')
     #TODO - not a full unit test - need to do partial data addition
     import unittest
     import _known_tables

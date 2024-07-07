@@ -4,8 +4,8 @@
     Bouquet Information Table.
 """
 
-from bat_nit_base import BatNitBase
-import descriptors
+from dvbsi.bat_nit_base import BatNitBase
+import dvbsi.descriptors
 
 class Bat(BatNitBase):
     """Bouquet Information Table class
@@ -80,7 +80,7 @@ class Bat(BatNitBase):
 ---------------------------------------------------------------------------------------------------------------------------
 '''
 if __name__ == '__main__':
-    print 'Testing Bat class'
+    print ('Testing Bat class')
     import unittest
     import _known_tables
     
@@ -110,8 +110,8 @@ if __name__ == '__main__':
             for function in self.known_sections:
                 data = self.known_sections[function]
                 bat = Bat(data)
-                print bat.get_service_list(5)
-                print bat
+                print (bat.get_service_list(5))
+                print (bat)
                 function(self, bat)
 
     unittest.main()

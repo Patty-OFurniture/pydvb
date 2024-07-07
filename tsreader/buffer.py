@@ -19,7 +19,7 @@ class Buffer(object):
         try:
             bytes = len(data)
             if self.size + bytes > self.max_size:
-                print 'buffer overflow'
+                print ('buffer overflow')
                 raise Exception
                 return 0
             self.size = self.size + bytes
@@ -34,7 +34,7 @@ class Buffer(object):
         try:
             if self.size <= 0 and not self.linked:
                 self.empty = True
-                print "Buffer empty"
+                print ("Buffer empty")
                 return -1
             if len(self.data) <= 0: return None
             data = self.data.pop(0)
@@ -88,4 +88,4 @@ class BufferReader(Thread):
         self.lock.release()
 
 if __name__ == '__main__':
-    print 'Testing Buffer class'
+    print ('Testing Buffer class')

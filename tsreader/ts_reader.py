@@ -64,7 +64,7 @@ class TsReader(threading.Thread):
                     buffer.write(packet)
             if pid not in self.pids:
                 self.pids[pid] = 0
-                print "new pid: ", hex(pid), "-- total = ", len(self.pids)
+                print( "new pid: ", hex(pid), "-- total = ", len(self.pids))
             self.pids[pid] = self.pids[pid] + 1
             af = packet_tools.get_adaptation_field(packet)
             if af == packet_tools.AF_ADAPTATION_FIELD_ONLY or af == packet_tools.AF_AF_AND_PL:
@@ -93,7 +93,7 @@ class TsReader(threading.Thread):
 
 if __name__ == '__main__':
     t1 = time.time()
-    dmx = TsReader('Your-ts-file-name-here.ts')
+    dmx = TsReader("file.ts")
     buf = Buffer(188*10000)
     dmx.link(0x10, buf)
     buf2 = Buffer(188*10000)
@@ -133,8 +133,8 @@ if __name__ == '__main__':
     #print bat.si_table
     #print sdt.si_table
     #print cat.si_table
-    print pat.si_table
-    print pmt.si_table
+    print (pat.si_table)
+    print (pmt.si_table)
 
     """
     msvl = service_list.Msvl([(6144, 16), (6144,11)])
@@ -172,10 +172,10 @@ if __name__ == '__main__':
     #print msvl
 """
     #print res
-    print dmx
+    print (dmx)
 
     t2 = time.time()
-    print 'took %0.3f ms' % ((t2 - t1)* 1000.0)
+    print ('took %0.3f ms' % ((t2 - t1)* 1000.0))
     #print sdt.si_table.sections[1][0].get_service_name(0x65e)
     #print bat.si_table.sections[1][0].get_channel_number(0x65e)
 

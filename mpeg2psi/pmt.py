@@ -4,8 +4,8 @@
     MPEG2-TS Program Map Table section
 """
 
-from section import Section
-import descriptors
+from mpeg2psi.section import Section
+import dvbsi.descriptors
 
 def get_pcr_pid(data):
     """Get the PCR PID from the given section data
@@ -281,7 +281,7 @@ class Pmt(Section):
 ---------------------------------------------------------------------------------------------------------------------------
 '''
 if __name__ == '__main__':
-    print 'Testing Pmt class'
+    print ('Testing Pmt class')
     import unittest
     import _known_tables
     sample_pmt = _known_tables.get_sample_pmt_data()[0]
@@ -314,6 +314,6 @@ if __name__ == '__main__':
                 #print pmt
                 #print pmt.get_pids()
                 function(self, pmt)
-                print pmt
+                print (pmt)
 
     unittest.main()
